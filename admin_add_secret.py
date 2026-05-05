@@ -1,17 +1,14 @@
-"""
-أداة إدارية — لإضافة المعرفات السرية للجهات المؤسسة
-يُشغَّل هذا الملف من سطر الأوامر من قِبل الأدمن فقط
-"""
-from database import Database
+# admin_add_secret.py
+import sqlite3
 
-db = Database()
-
-def add_secret_id():
-    print("=== أداة إضافة المعرف السري ===")
-    entity = input("اسم الجهة المؤسسة: ").strip()
-    secret = input("المعرف السري: ").strip()
-    db.add_secret_id(entity, secret)
-    print(f"✅ تم إضافة المعرف '{secret}' للجهة '{entity}' بنجاح.")
+def add_secret(secret_code):
+    conn = sqlite3.connect('murano.db')
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO secrets (secret_code) VALUES (?)", (secret_code,))
+    conn.commit()
+    conn.close()
+    print(f"✅ تمت إضافة المعرف السري بنجاح: {secret_code}")
 
 if __name__ == '__main__':
-    add_secret_id()
+    code = input("أدخل المعرف السري الجديد: ")
+    add_secret(code)
