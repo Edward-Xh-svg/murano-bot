@@ -7,11 +7,18 @@ def init_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS companies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            data TEXT,
-            secret_id TEXT,
             user_id INTEGER,
-            status TEXT DEFAULT 'pending'
+            name TEXT,
+            capital TEXT,
+            founder_entity TEXT,
+            secret_id TEXT,
+            status TEXT,
+            founder_name TEXT,
+            shares TEXT,
+            service TEXT,
+            employees TEXT,
+            shareholders TEXT,
+            currency TEXT
         )
     ''')
     cursor.execute('''
@@ -23,5 +30,4 @@ def init_db():
     conn.commit()
     conn.close()
 
-# تشغيل التهيئة عند الاستدعاء
 init_db()
