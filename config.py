@@ -1,15 +1,8 @@
-# ===================================
-# Malines Hostaka Stock Bot - Config
-# ===================================
+# config.py
 
-# 🤖 توكن البوت من BotFather
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8259423389:AAER55cyS_QeV3o9yC4xJKkmZc3RHEvXm44"
+ADMIN_ID = "@edwardmaystro"
+GROUP_LINK = "https://t.me/+IfVjK5l6_2M1MGI0"
 
-# 👤 ID الأدمن في تيليجرام
-ADMIN_ID = "YOUR_ADMIN_ID_HERE"
-
-# 👥 ID المجموعة لنشر الشركات (اختياري، اتركه فارغاً إن لم تكن تريد النشر)
-GROUP_ID = ""  # مثال: "-1001234567890"
-
-# 🤖 مفتاح Claude AI API
-CLAUDE_API_KEY = "YOUR_CLAUDE_API_KEY_HERE"
+# مفتاح Gemini الخاص بك
+GEMINI_API_KEY = "AIzaSyD_lnv5puPif9dJngU5WaKBa5VVNk_qNk4"
